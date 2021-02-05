@@ -1,5 +1,5 @@
 import client from 'src/utils/axios';
-import { BASE_URL } from 'src/utils/constants';
+import BASE_URL from 'src/utils/constants';
 
 export const getUserGistsFetcher = async (url) => {
   const response = await client.get(`${BASE_URL}${url}`, {
