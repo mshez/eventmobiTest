@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["react-app", "react", "prettier", "react-hooks"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/babel",
+    "prettier/react",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "paths": ["./src"]
+      }
+    }
+  },
+  "rules": {
+    "global-require": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-props-no-spreading": "off",
+    "no-console": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "react/no-array-index-key": "warn",
+    "import/prefer-default-export": "warn",
+    "react/react-in-jsx-scope": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "no-unused-vars": "warn"
+  }
+}
