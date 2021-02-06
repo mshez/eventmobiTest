@@ -3,7 +3,9 @@ import { getUserGistsFetcher, getUserGistForksAPI } from 'src/services/gists';
 import { useState } from 'react';
 
 export default function useGetUserGists() {
+  // Username state value
   const [username, setUsername] = useState(null);
+  // API Url
   const apiURL = (username && `/users/${username}/gists`) || null;
 
   const { data, error } = useSwr(apiURL, getUserGistsFetcher, {
@@ -12,6 +14,7 @@ export default function useGetUserGists() {
     focusThrottleInterval: 10000,
   });
 
+  // Get fork users handler
   const getForkUsers = async (gistId) => {
     try {
       const result = await getUserGistForksAPI(`/gists/${gistId}/forks`);

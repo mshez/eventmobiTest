@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// Styles
 import {
   Container,
   GistList,
@@ -14,20 +15,23 @@ import {
   Button,
 } from './styled.components';
 
+// Badges component
 const Badges = ({ files }) => {
   return Object.values(files).map((fileValue) => (
     <Badge key={fileValue.filename}>{fileValue.language}</Badge>
   ));
 };
-
+// Forked user component
 const ForkedUsers = ({ getForkUsers, itemId }) => {
   const [users, setUsers] = useState(null);
 
+  // Fetch users handler
   const fetchUsers = async () => {
     const fetchedUsers = await getForkUsers(itemId);
     setUsers(fetchedUsers);
   };
 
+  // If users are fetched and present
   if (users && users.length > 0) {
     return (
       <ForkedUsersContainer>
@@ -41,6 +45,7 @@ const ForkedUsers = ({ getForkUsers, itemId }) => {
       </ForkedUsersContainer>
     );
   }
+  // If no users found
   if (users && users.length === 0) {
     return <NoUsers>No users found</NoUsers>;
   }

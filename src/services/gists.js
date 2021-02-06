@@ -1,6 +1,7 @@
 import client from 'src/utils/axios';
 import BASE_URL from 'src/utils/constants';
 
+// Get User gist Gists fetcher for SWR
 export const getUserGistsFetcher = async (url) => {
   const response = await client.get(`${BASE_URL}${url}`, {
     headers: {
@@ -13,6 +14,7 @@ export const getUserGistsFetcher = async (url) => {
   return response.data;
 };
 
+// Get user gist forks
 export const getUserGistForksAPI = async (url) => {
   return client.get(`${BASE_URL}${url}`, {
     headers: {
