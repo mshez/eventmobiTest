@@ -1,4 +1,4 @@
 # Code Test - ReactJS
-- React SSR
+- React CSR
 - Github API
 - React Hooks
